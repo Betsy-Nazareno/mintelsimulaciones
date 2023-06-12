@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SpreadSheetSimulation from "./modules/SpreadSheets";
 import Home from "./modules/Home";
-import "./input.css";
+// import "./input.css";
 
 function App() {
   return (
