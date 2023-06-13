@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-// import {
-//   ColumnDirective,
-//   ColumnsDirective,
-//   RangeDirective,
-//   RangesDirective,
-//   SheetDirective,
-//   SheetsDirective,
-//   SpreadsheetComponent,
-// } from "@syncfusion/ej2-react-spreadsheet";
+import {
+  ColumnDirective,
+  ColumnsDirective,
+  RangeDirective,
+  RangesDirective,
+  SheetDirective,
+  SheetsDirective,
+  SpreadsheetComponent,
+} from "@syncfusion/ej2-react-spreadsheet";
 import "./styles/styles.css";
 import dataSets from "./dataSets";
 import { useParams } from "react-router-dom";
@@ -21,20 +21,19 @@ const SpreadSheetSimulation = () => {
   }, [dataSetKey]);
 
   return (
-    // <SpreadsheetComponent height={"100vh"}>
-    //   <SheetsDirective>
-    //     <SheetDirective>
-    //       <RangesDirective>
-    //         <RangeDirective dataSource={data}></RangeDirective>
-    //       </RangesDirective>
-    //       <ColumnsDirective>
-    //         {data &&
-    //           data.map((_e) => <ColumnDirective width={200}></ColumnDirective>)}
-    //       </ColumnsDirective>
-    //     </SheetDirective>
-    //   </SheetsDirective>
-    // </SpreadsheetComponent>
-    <div>hola</div>
+    <SpreadsheetComponent height={"100vh"}>
+      <SheetsDirective>
+        <SheetDirective>
+          <RangesDirective>
+            <RangeDirective dataSource={data}></RangeDirective>
+          </RangesDirective>
+          <ColumnsDirective>
+            {data &&
+              data.map((_e) => <ColumnDirective width={200}></ColumnDirective>)}
+          </ColumnsDirective>
+        </SheetDirective>
+      </SheetsDirective>
+    </SpreadsheetComponent>
   );
 };
 
