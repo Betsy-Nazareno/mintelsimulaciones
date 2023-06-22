@@ -22,7 +22,7 @@ export const FileManagerSimulation = () => {
 
   return (
     <div
-      // className="relative"
+      className="relative"
       style={{
         height: "100vh",
         backgroundImage:
