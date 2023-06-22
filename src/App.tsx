@@ -2,14 +2,14 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./modules/Home";
 import "./input.css";
-import Spreadsheet from "./modules/Spreadsheets";
+import Spreadsheets from "./modules/Spreadsheets";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route
-          element={<Spreadsheet />}
+          element={<Spreadsheets />}
           key={"spreadSheetSimulation"}
           path={"/spreadSheets/:id"}
         />

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import dataSets from "./datasets";
 import { useParams } from "react-router-dom";
 
-const SpreadSheet = () => {
+const SpreadSheets = () => {
   const { id } = useParams();
   const isUnmounted = useRef(false);
 
@@ -50,4 +50,4 @@ const SpreadSheet = () => {
   );
 };
 
-export default SpreadSheet;
+export default SpreadSheets;
