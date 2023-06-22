@@ -1,13 +1,9 @@
-import { customers } from "./customers";
-import { exampleData } from "./example";
+import { generateCustomers } from "./customers";
+import { getExampleData } from "./example";
 
-const dataSets: DataSet = {
-  example: exampleData,
-  customers: customers,
+const dataSets = {
+  example: getExampleData(),
+  customers: generateCustomers(),
 };
 
-export interface DataSet {
-  [key: string]: Record<string, string>[];
-}
-
-export default dataSets;
+export default dataSets as any;
