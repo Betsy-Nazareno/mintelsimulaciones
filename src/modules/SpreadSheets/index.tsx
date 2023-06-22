@@ -1,41 +1,53 @@
-import React, { useEffect, useState } from "react";
-// import {
-//   ColumnDirective,
-//   ColumnsDirective,
-//   RangeDirective,
-//   RangesDirective,
-//   SheetDirective,
-//   SheetsDirective,
-//   SpreadsheetComponent,
-// } from "@syncfusion/ej2-react-spreadsheet";
-import "./styles/styles.css";
-import dataSets from "./dataSets";
+import React, { useEffect, useRef } from "react";
+import dataSets from "./datasets";
 import { useParams } from "react-router-dom";
 
-const SpreadSheetSimulation = () => {
-  const [data, setData] = useState<any[]>();
-  const { id: dataSetKey = "" } = useParams();
+const SpreadSheet = () => {
+  const { id } = useParams();
+  const isUnmounted = useRef(false);
 
   useEffect(() => {
-    setData(dataSets[dataSetKey]);
-  }, [dataSetKey]);
+    if (!isUnmounted.current) {
+      const cellsData = dataSets[id as string];
+      const luckysheet = (window as any).luckysheet;
+      luckysheet?.create?.({
+        container: "luckysheet",
+        title: "Competencias Digitales - Ejercicio práctico",
+        data: [
+          {
+            name: "Sheet1",
+            color: "",
+            status: "1",
+            order: "0",
+            data: cellsData,
+            config: {},
+            index: 0,
+            defaultColWidth: 150,
+            column: 100,
+            row: 100,
+          },
+        ],
+      });
+    }
+    return () => {
+      isUnmounted.current = true;
+    };
+  }, [id]);
 
   return (
-    // <SpreadsheetComponent height={"100vh"}>
-    //   <SheetsDirective>
-    //     <SheetDirective>
-    //       <RangesDirective>
-    //         <RangeDirective dataSource={data}></RangeDirective>
-    //       </RangesDirective>
-    //       <ColumnsDirective>
-    //         {data &&
-    //           data.map((_e) => <ColumnDirective width={200}></ColumnDirective>)}
-    //       </ColumnsDirective>
-    //     </SheetDirective>
-    //   </SheetsDirective>
-    // </SpreadsheetComponent>
-    <div>hola</div>
+    <div
+      id="luckysheet"
+      style={{
+        margin: "0px",
+        padding: "0px",
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        left: "0px",
+        top: "0px",
+      }}
+    ></div>
   );
 };
 
-export default SpreadSheetSimulation;
+export default SpreadSheet;
