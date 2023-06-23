@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import PreviewFile from "./PreviewFile";
 import { FileManagerView } from "./FileManagerView";
 import Toolbar from "./assessts/Toolbar.png";
 import Modal from "../../common/modal";
+import fileSystemSets from "./datasets/data/index";
 
 export const FileManagerSimulation = () => {
+  const { id } = useParams();
   const [filePreview, setFilePreview] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [fileSystem, setFileSystem] = useState([]);
+
+  useEffect(() => {
+    setFileSystem(fileSystemSets[id as string]);
+  }, [id]);
 
   const handlePreview = (e: any) => {
-    console.log(e);
     const [filepath] = e.currentSelectedItemKeys;
     const parts = (filepath as string)?.split("/");
     const key = parts?.[parts.length - 1];
@@ -34,7 +41,10 @@ export const FileManagerSimulation = () => {
       </Modal>
       <div className="flex justify-center items-center px-28 pt-12">
         <div className="bg-white" style={{ width: "100%" }}>
-          <FileManagerView onFileSelectedChange={handlePreview} />
+          <FileManagerView
+            fileSystem={fileSystem}
+            onFileSelectedChange={handlePreview}
+          />
         </div>
       </div>
       <div className="absolute bottom-0" style={{ width: "100%" }}>
