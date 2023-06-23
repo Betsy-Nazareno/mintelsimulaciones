@@ -5,19 +5,20 @@ import FileManager, {
   Details,
   Column,
 } from "devextreme-react/file-manager";
-import { fileSystem } from "./datasets/data/example";
 
 const allowedFileExtensions: any = [];
 
-export const FileManagerView = ({ onFileSelectedChange }: Props) => {
+export const FileManagerView = ({
+  fileSystem,
+  onFileSelectedChange,
+}: Props) => {
   const [currentPath, setCurrentPath] = useState("Documents/Reports");
 
   const onCurrentDirectoryChanged = (e: any) => {
-    console.log(e);
     setCurrentPath(e.component.option("currentPath"));
   };
 
-  return (
+  return fileSystem ? (
     <FileManager
       currentPath={currentPath}
       fileSystemProvider={fileSystem}
@@ -47,9 +48,12 @@ export const FileManagerView = ({ onFileSelectedChange }: Props) => {
         </Details>
       </ItemView>
     </FileManager>
+  ) : (
+    <></>
   );
 };
 
 interface Props {
+  fileSystem: any;
   onFileSelectedChange: (e: any) => void;
 }

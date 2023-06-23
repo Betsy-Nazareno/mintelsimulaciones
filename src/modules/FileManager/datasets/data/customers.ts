@@ -1,4 +1,4 @@
-export const fileSystemExample = [
+export const fileSystemCustomers = [
   {
     name: "Folder1",
     size: 1024,
@@ -28,6 +28,33 @@ export const fileSystemExample = [
   },
   {
     name: "Folder2",
+    size: 1024,
+    dateModified: "2019/05/08",
+    thumbnail: "/icons/folder.png",
+    isDirectory: true,
+    items: [
+      {
+        name: "hmac.txt",
+        size: 1024,
+        dateModified: "2019/05/08",
+        created: "2019/05/08",
+        modifiedBy: "Meiyin Chang",
+        thumbnail: "/icons/txt.png",
+        isDirectory: false,
+      },
+      {
+        name: "votacion.pdf",
+        size: 1024,
+        dateModified: "2019/05/08",
+        created: "2019/05/08",
+        modifiedBy: "Gabriel Cañarte",
+        thumbnail: "/icons/pdf.png",
+        isDirectory: false,
+      },
+    ],
+  },
+  {
+    name: "Folder3",
     size: 1024,
     dateModified: "2019/05/08",
     thumbnail: "/icons/folder.png",
