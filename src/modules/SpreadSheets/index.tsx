@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import dataSets from "./datasets";
+import dataSets from "./Datasets";
 import { useParams } from "react-router-dom";
 
 const SpreadSheets = () => {
