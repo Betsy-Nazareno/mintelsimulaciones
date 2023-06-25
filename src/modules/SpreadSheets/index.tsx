@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import dataSets from "./Datasets";
+import dataSets from "./datasets";
 import { useParams } from "react-router-dom";
 
 const SpreadSheets = () => {
@@ -16,6 +16,18 @@ const SpreadSheets = () => {
         data: [
           {
             name: "Sheet1",
+            color: "",
+            status: "1",
+            order: "0",
+            data: cellsData,
+            config: {},
+            index: 0,
+            defaultColWidth: 150,
+            column: 100,
+            row: 100,
+          },
+          {
+            name: "Sheet2",
             color: "",
             status: "1",
             order: "0",
