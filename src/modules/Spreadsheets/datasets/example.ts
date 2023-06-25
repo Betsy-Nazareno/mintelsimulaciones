@@ -7,18 +7,11 @@ export const getExampleData = () => {
         m: "nombre",
         v: "Nombre",
         bl: 1,
-        bg: "#fff000",
       },
       {
         ct: { fa: "General", t: "g" },
         m: "apellido",
         v: "Apellido",
-        bl: 1,
-      },
-      {
-        ct: { fa: "General", t: "g" },
-        m: "example",
-        v: "Example",
         bl: 1,
       },
       ...cells,
@@ -46,19 +39,6 @@ export const getExampleData = () => {
         ct: { fa: "General", t: "g" },
         m: "Carreño",
         v: "Carreño",
-      },
-      ...cells,
-    ],
-    [
-      {
-        ct: { fa: "General", t: "g" },
-        m: "nuevo",
-        v: "Nuevo",
-      },
-      {
-        ct: { fa: "General", t: "g" },
-        m: "dos",
-        v: "Dos",
       },
       ...cells,
     ],
