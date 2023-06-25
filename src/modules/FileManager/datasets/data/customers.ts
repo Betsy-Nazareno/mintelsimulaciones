@@ -15,15 +15,6 @@ export const fileSystemCustomers = [
         thumbnail: "/icons/pdf.png",
         isDirectory: false,
       },
-      {
-        name: "votacion.pdf",
-        size: 1024,
-        dateModified: "2019/05/08",
-        created: "2019/05/08",
-        thumbnail: "/icons/txt.png",
-        modifiedBy: "Carlos Samuel",
-        isDirectory: false,
-      },
     ],
   },
   {
