@@ -12,7 +12,7 @@ function App() {
         <Route
           element={<Spreadsheets />}
           key={"spreadSheetSimulation"}
-          path={"/spreadSheets/:id"}
+          path={"/spreadsheets/:id"}
         />
         <Route
           element={<FileManagerSimulation />}

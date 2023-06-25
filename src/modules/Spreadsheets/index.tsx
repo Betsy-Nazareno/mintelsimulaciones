@@ -8,25 +8,24 @@ const SpreadSheets = () => {
 
   useEffect(() => {
     if (!isUnmounted.current) {
-      const cellsData = dataSets[id as string];
+      const doc = dataSets[id as string];
+      const sheets = doc.map((e: any) => ({
+        name: e.name,
+        color: "",
+        status: "1",
+        order: "0",
+        data: e.data,
+        config: {},
+        index: 0,
+        defaultColWidth: 250,
+        column: 100,
+        row: 100,
+      }));
       const luckysheet = (window as any).luckysheet;
       luckysheet?.create?.({
         container: "luckysheet",
         title: "Competencias Digitales - Ejercicio práctico",
-        data: [
-          {
-            name: "Sheet1",
-            color: "",
-            status: "1",
-            order: "0",
-            data: cellsData,
-            config: {},
-            index: 0,
-            defaultColWidth: 150,
-            column: 100,
-            row: 100,
-          },
-        ],
+        data: sheets,
       });
     }
     return () => {
