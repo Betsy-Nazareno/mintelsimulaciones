@@ -2,7 +2,7 @@ export const generateVentas = () => {
     const cells = Array.from({ length: 100 }, () => []);
     return [
       [
-
+ /*localhost:8080/spreadsheets/customers sheet2 que se llame ventas*/
         {
           ct: { fa: "General", t: "g" },
           m: "cliente",
