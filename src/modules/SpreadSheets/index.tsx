@@ -26,6 +26,18 @@ const SpreadSheets = () => {
             column: 100,
             row: 100,
           },
+          {
+            name: "Sheet2",
+            color: "",
+            status: "1",
+            order: "0",
+            data: cellsData,
+            config: {},
+            index: 0,
+            defaultColWidth: 150,
+            column: 100,
+            row: 100,
+          },
         ],
       });
     }
