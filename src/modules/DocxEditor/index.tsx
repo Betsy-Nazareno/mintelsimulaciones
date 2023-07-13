@@ -16,6 +16,7 @@ const RichTextEditor = () => {
 
   return (
     <div style={{ height: "100vh" }}>
+      hola
       <Editor
         tinymceScriptSrc={process.env.PUBLIC_URL + "/tinymce/tinymce.min.js"}
         onInit={(evt, editor) => (editorRef.current = editor as any)}
