@@ -5,7 +5,7 @@ import "./input.css";
 import Spreadsheets from "./modules/Spreadsheets";
 import { FileManagerSimulation } from "./modules/FileManager";
 import { EditorImage } from "./modules/ImageEditor";
-import SunEditorr from "./modules/DocxEditor";
+import RichTextEditor from "./modules/DocxEditor";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
           path={"/filemanager/:id"}
         />
         <Route element={<EditorImage />} key={"editor"} path={"/editor/:id"} />
-        <Route element={<SunEditorr />} key={"docx"} path={"/docx"} />
+        <Route element={<RichTextEditor />} key={"docx"} path={"/docx/:id"} />
       </Routes>
     </BrowserRouter>
   );
