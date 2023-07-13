@@ -16,6 +16,7 @@ export const EditorImage = () => {
 
   return (
     <div style={{ height: "100vh" }}>
+      hola2
       <FilerobotImageEditor
         source={`/images/${sourceImage}`}
         savingPixelRatio={1000}
