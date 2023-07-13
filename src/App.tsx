@@ -4,11 +4,14 @@ import Home from "./modules/Home";
 import "./input.css";
 import Spreadsheets from "./modules/Spreadsheets";
 import { FileManagerSimulation } from "./modules/FileManager";
+import { EditorImage } from "./modules/ImageEditor";
+import RichTextEditor from "./modules/DocxEditor";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route element={<Home />} key={"index"} path={"/"} />
         <Route
           element={<Spreadsheets />}
           key={"spreadSheetSimulation"}
@@ -19,7 +22,8 @@ function App() {
           key={"fileManager"}
           path={"/filemanager/:id"}
         />
-        <Route element={<Home />} key={"index"} path={"/"} />
+        <Route element={<EditorImage />} key={"editor"} path={"/editor/:id"} />
+        <Route element={<RichTextEditor />} key={"docx"} path={"/docx/:id"} />
       </Routes>
     </BrowserRouter>
   );
