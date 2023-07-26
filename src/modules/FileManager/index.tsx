@@ -22,7 +22,6 @@ export const FileManagerSimulation = () => {
     const key = parts?.[parts.length - 1];
     if (key && key.includes(".")) {
       setIsModalOpen(true);
-      console.log(key);
       setFilePreview(key);
     }
   };

@@ -6,6 +6,8 @@ import Spreadsheets from "./modules/Spreadsheets";
 import { FileManagerSimulation } from "./modules/FileManager";
 import { EditorImage } from "./modules/ImageEditor";
 import RichTextEditor from "./modules/DocxEditor";
+import PDFReader from "./modules/PDFReader";
+import CanvaSimulation from "./modules/CanvasEditor";
 
 function App() {
   return (
@@ -24,6 +26,12 @@ function App() {
         />
         <Route element={<EditorImage />} key={"editor"} path={"/editor/:id"} />
         <Route element={<RichTextEditor />} key={"docx"} path={"/docx/:id"} />
+        <Route element={<PDFReader />} key={"reader"} path={"/reader/:id"} />
+        <Route
+          element={<CanvaSimulation />}
+          key={"canva"}
+          path={"/canva/:id"}
+        />
       </Routes>
     </BrowserRouter>
   );
