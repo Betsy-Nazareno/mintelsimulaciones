@@ -1,17 +1,18 @@
-import React from "react";
-import { ReactSketchCanvas } from "react-sketch-canvas";
-
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
+import initialCanvas from "./datasets/indext";
+import CanvasEditor from "./CanvasEditor";
 const CanvaSimulation = () => {
+  const [operations, setOperations] = useState<any>([]);
+  const { id } = useParams();
+
+  useEffect(() => {
+    setOperations(initialCanvas[id as string]);
+  }, [id]);
+
   return (
-    <div>
-      <h1>Canvas Editor</h1>
-      <ReactSketchCanvas
-        width="1024px"
-        height="768px"
-        //  tool={Tools.Pencil}
-        //  lineColor='black'
-        //  lineWidth={3}
-      />
+    <div className="bg-[#E5E5E5] p-8">
+      <CanvasEditor />
     </div>
   );
 };
