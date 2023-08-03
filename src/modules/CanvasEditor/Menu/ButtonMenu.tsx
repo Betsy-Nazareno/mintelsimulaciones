@@ -7,7 +7,7 @@ const ButtonMenu = ({ onClick, size, name, buttonSelected }: Props) => {
   }`;
   return (
     <button className={classAtr} onClick={onClick}>
-      <img src={`/icons/${name}.png`} width={size} height={size} />
+      <img alt="button" src={`/icons/${name}.png`} width={size} height={size} />
     </button>
   );
 };

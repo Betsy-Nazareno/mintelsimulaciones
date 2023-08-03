@@ -1,19 +1,15 @@
 import React, { useState } from "react";
-import {
-  Stage,
-  Layer,
-  Rect,
-  RegularPolygon,
-  Image,
-  Circle,
-  Ellipse,
-  Text,
-} from "react-konva";
+import { Stage, Layer } from "react-konva";
 import CanvasMenu from "./Menu/CanvasMenu";
 import CustomPencil from "./FreeHandDraw/CustomPencil";
-import { LOREM_IPSUN } from "./constants";
 import CustomImage from "./Images";
 import CustomRect from "./BasicShapes/Rect";
+import CustomStar from "./BasicShapes/Star";
+import CustomEllipse from "./BasicShapes/Ellipse";
+import CustomArrow from "./BasicShapes/Arrow";
+import CustomCircle from "./BasicShapes/Circle";
+import CustomPolygon from "./BasicShapes/Polygon";
+import CustomText from "./BasicShapes/Text";
 
 const initialAssets = [
   // You can define your initial assets here, for example:
@@ -23,13 +19,23 @@ const initialAssets = [
     y: 50,
     width: 100,
     height: 50,
-    fill: "blue",
+    fill: "#0A20A0",
     sides: 1,
     radius: 10,
   },
-  { type: "polygon", x: 190, y: 50, sides: 6, radius: 50, fill: "blue" },
+  { type: "polygon", x: 190, y: 50, sides: 6, radius: 50, fill: "#0A20A0" },
   { type: "image", x: 500, y: 500 },
-  { type: "text", x: 50, y: 50, fill: "blue" },
+  {
+    type: "rect",
+    x: 500,
+    y: 100,
+    width: 500,
+    height: 500,
+    fill: "#FF0202",
+    sides: 1,
+    radius: 10,
+  },
+  { type: "text", x: 50, y: 50, fill: "#0A20A0" },
 ];
 
 const CanvasEditor = () => {
@@ -75,13 +81,13 @@ const CanvasEditor = () => {
   };
 
   const handleCanvasClick = (event: any) => {
-    // Here you can add new shapes when the canvas is clicked.
     const newShape = {
       type: selectedShape,
       x: event.evt.layerX,
       y: event.evt.layerY,
       width: 80,
       height: 80,
+      sides: 6,
       fill: selectedColor,
     };
     setShapes([...shapes, newShape]);
@@ -89,13 +95,14 @@ const CanvasEditor = () => {
 
   return (
     <div className="grid grid-cols-12">
-      <div className="col-span-1">
+      <div className="col-span-1 sticky top-10 h-[100vh] z-40">
         <CanvasMenu
           onShapeSelect={handleShapeSelect}
           onColorChange={handleColorChange}
+          selectedColor={selectedColor}
         />
       </div>
-      <div className="col-span-11">
+      <div className="col-span-11 z-10">
         <Stage
           width={window.innerWidth}
           height={window.innerHeight}
@@ -115,14 +122,45 @@ const CanvasEditor = () => {
                     idSelected={idSelected as number}
                     setIdSelected={setIdSelected}
                     color={selectedColor}
+                    setSelectedColor={setSelectedColor}
                   />
                 );
               } else if (shape.type === "polygon") {
-                return <RegularPolygon key={index} draggable {...shape} />;
+                return (
+                  <CustomPolygon
+                    key={index}
+                    id={index}
+                    shape={shape}
+                    idSelected={idSelected as number}
+                    setIdSelected={setIdSelected}
+                    color={selectedColor}
+                    setSelectedColor={setSelectedColor}
+                  />
+                );
               } else if (shape.type === "circle") {
-                return <Circle key={index} draggable {...shape} />;
+                return (
+                  <CustomCircle
+                    key={index}
+                    id={index}
+                    shape={shape}
+                    idSelected={idSelected as number}
+                    setIdSelected={setIdSelected}
+                    color={selectedColor}
+                    setSelectedColor={setSelectedColor}
+                  />
+                );
               } else if (shape.type === "ellipse") {
-                return <Ellipse key={index} draggable {...shape} />;
+                return (
+                  <CustomEllipse
+                    id={index}
+                    key={index}
+                    shape={shape}
+                    color={selectedColor}
+                    idSelected={idSelected as number}
+                    setIdSelected={setIdSelected}
+                    setSelectedColor={setSelectedColor}
+                  />
+                );
               } else if (shape.type === "pencil") {
                 return (
                   <CustomPencil
@@ -133,10 +171,42 @@ const CanvasEditor = () => {
                 );
               } else if (shape.type === "text") {
                 return (
-                  <Text key={index} {...shape} draggable text={LOREM_IPSUN} />
+                  <CustomText
+                    id={index}
+                    key={index}
+                    shape={shape}
+                    color={selectedColor}
+                    idSelected={idSelected as number}
+                    setIdSelected={setIdSelected}
+                    setSelectedColor={setSelectedColor}
+                  />
                 );
               } else if (shape.type === "image") {
-                return <CustomImage />;
+                return <CustomImage key={index} />;
+              } else if (shape.type === "star") {
+                return (
+                  <CustomStar
+                    id={index}
+                    key={index}
+                    shape={shape}
+                    color={selectedColor}
+                    idSelected={idSelected as number}
+                    setIdSelected={setIdSelected}
+                    setSelectedColor={setSelectedColor}
+                  />
+                );
+              } else if (shape.type === "arrow") {
+                return (
+                  <CustomArrow
+                    id={index}
+                    key={index}
+                    shape={shape}
+                    color={selectedColor}
+                    idSelected={idSelected as number}
+                    setIdSelected={setIdSelected}
+                    setSelectedColor={setSelectedColor}
+                  />
+                );
               }
               return null;
             })}

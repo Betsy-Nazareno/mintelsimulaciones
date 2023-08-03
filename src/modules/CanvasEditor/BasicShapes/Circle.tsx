@@ -1,7 +1,7 @@
 import React from "react";
-import { Rect } from "react-konva";
+import { Circle } from "react-konva";
 
-const CustomRect = ({
+const CustomCircle = ({
   shape,
   id,
   idSelected,
@@ -23,7 +23,7 @@ const CustomRect = ({
   }, [color]);
 
   return (
-    <Rect
+    <Circle
       {...shape}
       draggable
       stroke={isSelected ? "#4FC2FF" : ""}
@@ -43,4 +43,4 @@ interface Props {
   setSelectedColor: (value: string) => void;
 }
 
-export default CustomRect;
+export default CustomCircle;

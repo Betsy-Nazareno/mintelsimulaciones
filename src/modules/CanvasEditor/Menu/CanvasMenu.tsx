@@ -2,17 +2,15 @@ import React from "react";
 import ColorPicker from "./ColorPicker";
 import ButtonMenu from "./ButtonMenu";
 
-const CanvasMenu = ({ onShapeSelect, onColorChange }: any) => {
-  const [color, setColor] = React.useState("");
+const CanvasMenu = ({ onShapeSelect, onColorChange, selectedColor }: any) => {
   const [buttonSelected, setButtonSelected] = React.useState("select");
-
+  console.log(selectedColor);
   const handleShapeSelect = (shapeType: any) => {
     setButtonSelected(shapeType);
     onShapeSelect(shapeType);
   };
 
   const handleColorChange = (color: string) => {
-    setColor(color);
     onColorChange(color);
   };
   //#43649D
@@ -81,7 +79,7 @@ const CanvasMenu = ({ onShapeSelect, onColorChange }: any) => {
         buttonSelected={buttonSelected}
       />
 
-      <ColorPicker color={color} setColor={handleColorChange} />
+      <ColorPicker color={selectedColor} setColor={handleColorChange} />
     </div>
   );
 };

@@ -1,10 +1,11 @@
 import React from "react";
-import { Rect } from "react-konva";
+import { Text } from "react-konva";
+import { LOREM_IPSUN } from "../constants";
 
-const CustomRect = ({
+const CustomText = ({
   shape,
-  id,
   idSelected,
+  id,
   color,
   setIdSelected,
   setSelectedColor,
@@ -23,24 +24,27 @@ const CustomRect = ({
   }, [color]);
 
   return (
-    <Rect
-      {...shape}
+    <Text
+      key={id}
       draggable
+      {...shape}
+      text={LOREM_IPSUN}
+      fontSize={20}
+      fill={fill}
       stroke={isSelected ? "#4FC2FF" : ""}
       onClick={() => setIdSelected(id)}
-      onLostPointerCapture={() => setIdSelected(-1)} //At the moment is disable the onFocus
-      fill={fill}
+      onLostPointerCapture={() => setIdSelected(-1)}
     />
   );
 };
 
 interface Props {
   shape: any;
+  idSelected: number;
   id: number;
   color: string;
-  idSelected: number;
   setIdSelected: (value: number) => void;
   setSelectedColor: (value: string) => void;
 }
 
-export default CustomRect;
+export default CustomText;

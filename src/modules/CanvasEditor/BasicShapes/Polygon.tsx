@@ -1,10 +1,10 @@
 import React from "react";
-import { Rect } from "react-konva";
+import { RegularPolygon } from "react-konva";
 
-const CustomRect = ({
+const CustomPolygon = ({
   shape,
-  id,
   idSelected,
+  id,
   color,
   setIdSelected,
   setSelectedColor,
@@ -23,24 +23,25 @@ const CustomRect = ({
   }, [color]);
 
   return (
-    <Rect
-      {...shape}
+    <RegularPolygon
+      key={id}
       draggable
+      {...shape}
+      fill={fill}
       stroke={isSelected ? "#4FC2FF" : ""}
       onClick={() => setIdSelected(id)}
-      onLostPointerCapture={() => setIdSelected(-1)} //At the moment is disable the onFocus
-      fill={fill}
+      onLostPointerCapture={() => setIdSelected(-1)}
     />
   );
 };
 
 interface Props {
   shape: any;
+  idSelected: number;
   id: number;
   color: string;
-  idSelected: number;
   setIdSelected: (value: number) => void;
   setSelectedColor: (value: string) => void;
 }
 
-export default CustomRect;
+export default CustomPolygon;

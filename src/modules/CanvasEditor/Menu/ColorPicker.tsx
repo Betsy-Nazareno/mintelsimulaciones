@@ -1,5 +1,5 @@
 import React from "react";
-import { ChromePicker } from "react-color";
+import { HexAlphaColorPicker } from "react-colorful";
 
 const ColorPicker = ({ color, setColor }: Props) => {
   const [displayColorPicker, setDisplayColorPicker] = React.useState(false);
@@ -12,19 +12,16 @@ const ColorPicker = ({ color, setColor }: Props) => {
     setDisplayColorPicker(false);
   };
 
-  const handleColorChange = (e: any) => {
-    setColor(e.hex);
-  };
   return (
     <div className="col-span-1 m-auto">
       <button onClick={handleClick}>
-        <img src="/icons/color.png" width={30} height={30} />
+        <img alt="color picker" src="/icons/color.png" width={30} height={30} />
       </button>
       {displayColorPicker ? (
         <div
           style={{
             position: "absolute",
-            zIndex: "2",
+            zIndex: "99",
           }}
         >
           <div
@@ -37,7 +34,13 @@ const ColorPicker = ({ color, setColor }: Props) => {
             }}
             onClick={handleClose}
           />
-          <ChromePicker color={color} onChange={handleColorChange} />
+          <HexAlphaColorPicker
+            color={color}
+            onChange={(e) => {
+              console.log(e, "desde aqui");
+              setColor(e);
+            }}
+          />
         </div>
       ) : null}
     </div>
