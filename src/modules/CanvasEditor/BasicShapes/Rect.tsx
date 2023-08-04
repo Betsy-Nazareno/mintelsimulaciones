@@ -25,7 +25,6 @@ const CustomRect = ({
   return (
     <Rect
       {...shape}
-      draggable
       stroke={isSelected ? "#4FC2FF" : ""}
       onClick={() => setIdSelected(id)}
       onLostPointerCapture={() => setIdSelected(-1)} //At the moment is disable the onFocus

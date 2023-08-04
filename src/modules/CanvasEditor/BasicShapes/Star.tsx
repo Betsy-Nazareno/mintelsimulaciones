@@ -29,7 +29,6 @@ const CustomStar = ({
       innerRadius={20}
       outerRadius={40}
       fill={fill}
-      draggable
       stroke={isSelected ? "#4FC2FF" : ""}
       onClick={() => setIdSelected(id)}
       onLostPointerCapture={() => setIdSelected(-1)}

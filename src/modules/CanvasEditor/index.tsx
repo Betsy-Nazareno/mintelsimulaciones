@@ -4,16 +4,16 @@ import initialCanvas from "./datasets/indext";
 import CanvasEditor from "./CanvasEditor";
 
 const CanvaSimulation = () => {
-  const [operations, setOperations] = useState<any>([]);
+  const [initialAssets, setInitialAssets] = useState<any>([]);
   const { id } = useParams();
 
   useEffect(() => {
-    setOperations(initialCanvas[id as string]);
+    setInitialAssets(initialCanvas[id as string]);
   }, [id]);
 
   return (
     <div className="bg-[#E5E5E5] px-8 pt-2 overflow-hidden relative">
-      <CanvasEditor />
+      <CanvasEditor initialAssets={initialAssets} />
     </div>
   );
 };

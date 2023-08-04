@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Stage, Layer } from "react-konva";
 import CanvasMenu from "./Menu/CanvasMenu";
 import CustomPencil from "./FreeHandDraw/CustomPencil";
-import CustomImage from "./Images";
+import CustomImage from "./BasicShapes/Image";
 import CustomRect from "./BasicShapes/Rect";
 import CustomStar from "./BasicShapes/Star";
 import CustomEllipse from "./BasicShapes/Ellipse";
@@ -11,40 +11,17 @@ import CustomCircle from "./BasicShapes/Circle";
 import CustomPolygon from "./BasicShapes/Polygon";
 import CustomText from "./BasicShapes/Text";
 
-const initialAssets = [
-  // You can define your initial assets here, for example:
-  {
-    type: "rect",
-    x: 50,
-    y: 50,
-    width: 100,
-    height: 50,
-    fill: "#0A20A0",
-    sides: 1,
-    radius: 10,
-  },
-  { type: "polygon", x: 190, y: 50, sides: 6, radius: 50, fill: "#0A20A0" },
-  { type: "image", x: 500, y: 500 },
-  {
-    type: "rect",
-    x: 500,
-    y: 100,
-    width: 500,
-    height: 500,
-    fill: "#FF0202",
-    sides: 1,
-    radius: 10,
-  },
-  { type: "text", x: 50, y: 50, fill: "#0A20A0" },
-];
-
-const CanvasEditor = () => {
-  const [shapes, setShapes] = useState<any>(initialAssets);
+const CanvasEditor = ({ initialAssets }: Props) => {
+  const [shapes, setShapes] = useState<any>([]);
   const [selectedShape, setSelectedShape] = useState("select");
   const [selectedColor, setSelectedColor] = useState("black");
   const [idSelected, setIdSelected] = useState<number>();
   const [lines, setLines] = React.useState<any>([]);
   const isDrawing = React.useRef(false);
+
+  useEffect(() => {
+    setShapes(initialAssets);
+  }, [initialAssets]);
 
   const handleShapeSelect = (shapeType: any) => {
     setSelectedShape(shapeType);
@@ -85,6 +62,7 @@ const CanvasEditor = () => {
       type: selectedShape,
       x: event.evt.layerX,
       y: event.evt.layerY,
+      draggable: true,
       width: 80,
       height: 80,
       sides: 6,
@@ -182,7 +160,7 @@ const CanvasEditor = () => {
                   />
                 );
               } else if (shape.type === "image") {
-                return <CustomImage key={index} />;
+                return <CustomImage key={index} shape={shape} />;
               } else if (shape.type === "star") {
                 return (
                   <CustomStar
@@ -216,5 +194,9 @@ const CanvasEditor = () => {
     </div>
   );
 };
+
+interface Props {
+  initialAssets: any;
+}
 
 export default CanvasEditor;

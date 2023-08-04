@@ -26,7 +26,6 @@ const CustomText = ({
   return (
     <Text
       key={id}
-      draggable
       {...shape}
       text={LOREM_IPSUN}
       fontSize={20}

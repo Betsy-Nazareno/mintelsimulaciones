@@ -25,7 +25,6 @@ const CustomPolygon = ({
   return (
     <RegularPolygon
       key={id}
-      draggable
       {...shape}
       fill={fill}
       stroke={isSelected ? "#4FC2FF" : ""}
