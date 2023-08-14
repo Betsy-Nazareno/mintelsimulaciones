@@ -22,6 +22,7 @@ const ColorPicker = ({ color, setColor }: Props) => {
           style={{
             position: "absolute",
             zIndex: "99",
+            marginRight: "100px",
           }}
         >
           <div
@@ -35,9 +36,9 @@ const ColorPicker = ({ color, setColor }: Props) => {
             onClick={handleClose}
           />
           <HexAlphaColorPicker
+            className="ml-[-150px] lg:ml-0"
             color={color}
             onChange={(e) => {
-              console.log(e, "desde aqui");
               setColor(e);
             }}
           />
