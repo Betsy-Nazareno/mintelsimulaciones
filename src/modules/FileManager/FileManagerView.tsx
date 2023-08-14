@@ -25,7 +25,7 @@ export const FileManagerView = ({
       allowedFileExtensions={allowedFileExtensions}
       height={550}
       onCurrentDirectoryChanged={onCurrentDirectoryChanged}
-      onSelectionChanged={onFileSelectedChange}
+      onSelectedFileOpened={onFileSelectedChange}
     >
       <Permissions
         create={true}

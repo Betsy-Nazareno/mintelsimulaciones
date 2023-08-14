@@ -17,7 +17,7 @@ const SpreadSheets = () => {
         data: e.data,
         config: {},
         index: 0,
-        defaultColWidth: 250,
+        defaultColWidth: e.colWidth,
         column: 100,
         row: 100,
       }));
