@@ -13,7 +13,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Home />} key={"index"} path={"/simulaciones"} />
+        <Route element={<Home />} key={"index"} path={"/simulaciones/"} />
 
         <Route path={"/simulaciones/*"}>
           <Route
