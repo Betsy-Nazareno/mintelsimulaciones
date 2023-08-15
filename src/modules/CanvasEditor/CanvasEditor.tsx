@@ -72,15 +72,15 @@ const CanvasEditor = ({ initialAssets }: Props) => {
   };
 
   return (
-    <div className="grid grid-cols-12">
-      <div className="col-span-1 sticky top-10 h-[100vh] z-40">
+    <div className="lg:grid lg:grid-cols-12">
+      <div className="lg:col-span-1 sticky top-10 lg:h-[100vh] z-40">
         <CanvasMenu
           onShapeSelect={handleShapeSelect}
           onColorChange={handleColorChange}
           selectedColor={selectedColor}
         />
       </div>
-      <div className="col-span-11 z-10">
+      <div className="lg:col-span-11 z-10">
         <Stage
           width={window.innerWidth}
           height={window.innerHeight}

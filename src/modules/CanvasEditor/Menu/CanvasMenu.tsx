@@ -4,7 +4,7 @@ import ButtonMenu from "./ButtonMenu";
 
 const CanvasMenu = ({ onShapeSelect, onColorChange, selectedColor }: any) => {
   const [buttonSelected, setButtonSelected] = React.useState("select");
-  console.log(selectedColor);
+
   const handleShapeSelect = (shapeType: any) => {
     setButtonSelected(shapeType);
     onShapeSelect(shapeType);
@@ -13,9 +13,9 @@ const CanvasMenu = ({ onShapeSelect, onColorChange, selectedColor }: any) => {
   const handleColorChange = (color: string) => {
     onColorChange(color);
   };
-  //#43649D
+
   return (
-    <div className="bg-white rounded-3xl grid grid-cols-2 p-4 items-center content-center gap-y-4">
+    <div className="bg-white rounded-3xl grid  grid-cols-10 lg:grid-cols-2 p-4 items-center content-center gap-y-4">
       <ButtonMenu
         name="rect"
         size={25}

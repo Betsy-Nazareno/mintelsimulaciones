@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import { Rect } from "react-konva";
 
@@ -11,6 +12,7 @@ const CustomRect = ({
 }: Props) => {
   const [isSelected, setIsSelected] = React.useState<boolean>(false);
   const [fill, setFill] = React.useState<string>(shape.fill);
+  const screenWidth = window?.screen?.width;
 
   React.useEffect(() => {
     const isSelected = idSelected === id;
@@ -26,6 +28,8 @@ const CustomRect = ({
     <Rect
       {...shape}
       stroke={isSelected ? "#4FC2FF" : ""}
+      width={screenWidth <= 600 ? 250 : shape.width}
+      height={screenWidth <= 600 ? 70 : shape.height}
       onClick={() => setIdSelected(id)}
       onLostPointerCapture={() => setIdSelected(-1)} //At the moment is disable the onFocus
       fill={fill}

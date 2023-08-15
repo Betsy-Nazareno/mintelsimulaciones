@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import { Text } from "react-konva";
 import { LOREM_IPSUN } from "../constants";

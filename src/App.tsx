@@ -13,25 +13,29 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Home />} key={"index"} path={"/"} />
-        <Route
-          element={<Spreadsheets />}
-          key={"spreadSheetSimulation"}
-          path={"/spreadsheets/:id"}
-        />
-        <Route
-          element={<FileManagerSimulation />}
-          key={"fileManager"}
-          path={"/filemanager/:id"}
-        />
-        <Route element={<EditorImage />} key={"editor"} path={"/editor/:id"} />
-        <Route element={<RichTextEditor />} key={"docx"} path={"/docx/:id"} />
-        <Route element={<PDFReader />} key={"reader"} path={"/reader/:id"} />
-        <Route
-          element={<CanvaSimulation />}
-          key={"canva"}
-          path={"/canva/:id"}
-        />
+        <Route element={<Home />} key={"index"} path={"/simulaciones"} />
+
+        <Route path={"/simulaciones/*"}>
+          <Route
+            element={<Spreadsheets />}
+            key={"spreadSheetSimulation"}
+            path={"spreadsheets/:id"}
+          />
+          <Route
+            element={<FileManagerSimulation />}
+            key={"fileManager"}
+            path={"filemanager/:id"}
+          />
+          <Route element={<EditorImage />} key={"editor"} path={"editor/:id"} />
+          <Route element={<RichTextEditor />} key={"docx"} path={"docx/:id"} />
+          <Route element={<PDFReader />} key={"reader"} path={"reader/:id"} />
+          <Route
+            element={<CanvaSimulation />}
+            key={"canva"}
+            path={"canva/:id"}
+          />
+        </Route>
+
       </Routes>
     </BrowserRouter>
   );

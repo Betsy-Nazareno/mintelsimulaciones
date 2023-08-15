@@ -12,7 +12,7 @@ const CanvaSimulation = () => {
   }, [id]);
 
   return (
-    <div className="bg-[#E5E5E5] px-8 pt-2 overflow-hidden relative">
+    <div className="bg-[#E5E5E5] px-2 md:px-8 pt-2 overflow-hidden relative">
       <CanvasEditor initialAssets={initialAssets} />
     </div>
   );

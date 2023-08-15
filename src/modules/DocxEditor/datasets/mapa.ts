@@ -4,7 +4,7 @@ export const mapaHTML = `
 
     <h1 style="text-align:center; color:#F0FF0E; background-color:#F0FF0E;">Ecuador: ubicación, geografía y clima</h1>
     <div style="display:flex; justify-content:center">
-        <img src="https://i.pinimg.com/originals/83/91/9a/83919a4d3f2d3808ee7d2e386eab0e30.png" width="300px" />
+        <img src="https://competenciasdigitales.cti.espol.edu.ec/back/multimedia/mapa_politico_ecuador.png" width="300px" />
     </div>
     <section>
         <div>
