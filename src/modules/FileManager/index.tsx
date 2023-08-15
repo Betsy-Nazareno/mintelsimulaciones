@@ -11,20 +11,19 @@ export const FileManagerSimulation = () => {
   const [filePreview, setFilePreview] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [fileSystem, setFileSystem] = useState([]);
+  const [externalUri, setExternalUri] = useState("");
 
   useEffect(() => {
     setFileSystem(fileSystemSets[id as string]);
   }, [id]);
 
   const handlePreview = (e: any) => {
-    const [filepath] = e.currentSelectedItemKeys;
-    const parts = (filepath as string)?.split("/");
-    const key = parts?.[parts.length - 1];
-    if (key && key.includes(".")) {
-      setIsModalOpen(true);
-      console.log(key);
-      setFilePreview(key);
-    }
+    const { uri, name } = e.file?.dataItem || {};
+    if (!name) return;
+    if (!name.includes(".")) return;
+    setIsModalOpen(true);
+    setFilePreview(name);
+    uri && setExternalUri(uri);
   };
 
   return (
@@ -37,9 +36,9 @@ export const FileManagerSimulation = () => {
       }}
     >
       <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen}>
-        <PreviewFile filePreview={filePreview} />
+        <PreviewFile filePreview={filePreview} externalUri={externalUri} />
       </Modal>
-      <div className="flex justify-center items-center px-28 pt-12">
+      <div className="flex justify-center items-center px-2 lg:px-28 pt-12">
         <div className="bg-white" style={{ width: "100%" }}>
           <FileManagerView
             fileSystem={fileSystem}
