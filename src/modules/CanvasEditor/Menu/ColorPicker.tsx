@@ -15,7 +15,12 @@ const ColorPicker = ({ color, setColor }: Props) => {
   return (
     <div className="col-span-1 m-auto">
       <button onClick={handleClick}>
-        <img alt="color picker" src="/icons/color.png" width={30} height={30} />
+        <img
+          alt="color picker"
+          src="/simulaciones/icons/color.png"
+          width={30}
+          height={30}
+        />
       </button>
       {displayColorPicker ? (
         <div

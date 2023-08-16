@@ -3,7 +3,7 @@ export const fileSystemBusinessModel = [
     name: "Proyectos",
     size: 1024,
     dateModified: "2019/05/08",
-    thumbnail: "/icons/folder.png",
+    thumbnail: "/simulaciones/icons/folder.png",
     isDirectory: true,
     items: [
       {
@@ -12,7 +12,7 @@ export const fileSystemBusinessModel = [
         dateModified: "2019/05/08",
         modifiedBy: "Ana María",
         created: "2019/05/08",
-        thumbnail: "/icons/pdf.png",
+        thumbnail: "/simulaciones/icons/pdf.png",
         isDirectory: false,
       },
       {
@@ -20,7 +20,7 @@ export const fileSystemBusinessModel = [
         size: 1024,
         dateModified: "2019/05/08",
         created: "2019/05/08",
-        thumbnail: "/icons/txt.png",
+        thumbnail: "/simulaciones/icons/txt.png",
         modifiedBy: "Carlos Samuel",
         isDirectory: false,
       },
@@ -30,7 +30,7 @@ export const fileSystemBusinessModel = [
     name: "Tareas",
     size: 1024,
     dateModified: "2019/05/08",
-    thumbnail: "/icons/folder.png",
+    thumbnail: "/simulaciones/icons/folder.png",
     isDirectory: true,
     items: [
       {
@@ -40,7 +40,7 @@ export const fileSystemBusinessModel = [
         dateModified: "2019/05/08",
         modifiedBy: "Ana María",
         created: "2019/05/08",
-        thumbnail: "/icons/pdf.png",
+        thumbnail: "/simulaciones/icons/pdf.png",
         isDirectory: false,
       },
     ],

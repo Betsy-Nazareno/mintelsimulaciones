@@ -3,7 +3,7 @@ export const fileSystemCustomers = [
     name: "Folder1",
     size: 1024,
     dateModified: "2019/05/08",
-    thumbnail: "/icons/folder.png",
+    thumbnail: "/simulaciones/icons/folder.png",
     isDirectory: true,
     items: [
       {
@@ -12,7 +12,7 @@ export const fileSystemCustomers = [
         dateModified: "2019/05/08",
         modifiedBy: "Ana María",
         created: "2019/05/08",
-        thumbnail: "/icons/pdf.png",
+        thumbnail: "/simulaciones/icons/pdf.png",
         isDirectory: false,
       },
     ],
@@ -21,7 +21,7 @@ export const fileSystemCustomers = [
     name: "Folder2",
     size: 1024,
     dateModified: "2022/05/08",
-    thumbnail: "/icons/folder.png",
+    thumbnail: "/simulaciones/icons/folder.png",
     isDirectory: true,
     items: [
       {
@@ -30,7 +30,7 @@ export const fileSystemCustomers = [
         dateModified: "2021/11/27",
         created: "2021/11/27",
         modifiedBy: "Andrés Mendía",
-        thumbnail: "/icons/txt.png",
+        thumbnail: "/simulaciones/icons/txt.png",
         isDirectory: false,
       },
       {
@@ -39,7 +39,7 @@ export const fileSystemCustomers = [
         dateModified: "2022/05/08",
         created: "2022/05/06",
         modifiedBy: "Melissa Rizzo",
-        thumbnail: "/icons/pdf.png",
+        thumbnail: "/simulaciones/icons/pdf.png",
         isDirectory: false,
       },
       {
@@ -48,7 +48,7 @@ export const fileSystemCustomers = [
         dateModified: "2022/10/17",
         created: "2022/10/17",
         modifiedBy: "Elizabeth Villacres",
-        thumbnail: "/icons/pdf.png",
+        thumbnail: "/simulaciones/icons/pdf.png",
         isDirectory: false,
       },
     ],
@@ -57,7 +57,7 @@ export const fileSystemCustomers = [
     name: "Folder3",
     size: 1024,
     dateModified: "2023/06/17",
-    thumbnail: "/icons/folder.png",
+    thumbnail: "/simulaciones/icons/folder.png",
     isDirectory: true,
     items: [
       {
@@ -66,7 +66,7 @@ export const fileSystemCustomers = [
         dateModified: "2023/06/17",
         created: "2022/04/23",
         modifiedBy: "Meiyin Chang",
-        thumbnail: "/icons/txt.png",
+        thumbnail: "/simulaciones/icons/txt.png",
         isDirectory: false,
       },
       {
@@ -75,7 +75,7 @@ export const fileSystemCustomers = [
         dateModified: "2022/03/12",
         created: "2022/03/20",
         modifiedBy: "Diego Martinez",
-        thumbnail: "/icons/pdf.png",
+        thumbnail: "/simulaciones/icons/pdf.png",
         isDirectory: false,
       },
     ],

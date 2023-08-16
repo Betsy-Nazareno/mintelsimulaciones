@@ -3,7 +3,7 @@ export const fileSystemExample = [
     name: "Folder1",
     size: 1024,
     dateModified: "2019/05/08",
-    thumbnail: "/icons/folder.png",
+    thumbnail: "/simulaciones/icons/folder.png",
     isDirectory: true,
     items: [
       {
@@ -12,7 +12,7 @@ export const fileSystemExample = [
         dateModified: "2019/05/08",
         modifiedBy: "Ana María",
         created: "2019/05/08",
-        thumbnail: "/icons/pdf.png",
+        thumbnail: "/simulaciones/icons/pdf.png",
         isDirectory: false,
       },
       {
@@ -20,7 +20,7 @@ export const fileSystemExample = [
         size: 1024,
         dateModified: "2019/05/08",
         created: "2019/05/08",
-        thumbnail: "/icons/txt.png",
+        thumbnail: "/simulaciones/icons/txt.png",
         modifiedBy: "Carlos Samuel",
         isDirectory: false,
       },
@@ -30,7 +30,7 @@ export const fileSystemExample = [
     name: "Folder2",
     size: 1024,
     dateModified: "2019/05/08",
-    thumbnail: "/icons/folder.png",
+    thumbnail: "/simulaciones/icons/folder.png",
     isDirectory: true,
     items: [
       {
@@ -39,7 +39,7 @@ export const fileSystemExample = [
         dateModified: "2019/05/08",
         created: "2019/05/08",
         modifiedBy: "Meiyin Chang",
-        thumbnail: "/icons/txt.png",
+        thumbnail: "/simulaciones/icons/txt.png",
         isDirectory: false,
       },
       {
@@ -48,7 +48,7 @@ export const fileSystemExample = [
         dateModified: "2019/05/08",
         created: "2019/05/08",
         modifiedBy: "Gabriel Cañarte",
-        thumbnail: "/icons/pdf.png",
+        thumbnail: "/simulaciones/icons/pdf.png",
         isDirectory: false,
       },
     ],

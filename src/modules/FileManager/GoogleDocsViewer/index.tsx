@@ -3,7 +3,7 @@ import React from "react";
 const GoogleDocViewer = ({ uri }: Props) => {
   return (
     <div className="md:w-[600px] lg:w-[1090px]">
-      <img src="/images/toolbar_pptx.png" alt="Toolbar" />
+      <img src="/simulaciones/images/toolbar_pptx.png" alt="Toolbar" />
       <iframe
         src={uri}
         title="Google Doc Viewer"
