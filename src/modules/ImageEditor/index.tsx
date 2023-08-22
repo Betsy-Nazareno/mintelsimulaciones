@@ -20,7 +20,7 @@ export const EditorImage = () => {
     <div style={{ height: "100vh" }}>
       {sourceImage && (
         <FilerobotImageEditor
-          source={`/images/${sourceImage}`}
+          source={`/simulaciones/images/${sourceImage}`}
           onSave={handleSave}
           savingPixelRatio={1000}
           previewPixelRatio={1000}
