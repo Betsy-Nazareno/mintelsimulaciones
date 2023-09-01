@@ -1,6 +1,6 @@
 export const fileSystemCustomers = [
   {
-    name: "Folder1",
+    name: "Imagenes",
     size: 1024,
     dateModified: "2019/05/08",
     thumbnail: "/simulaciones/icons/folder.png",
@@ -18,7 +18,7 @@ export const fileSystemCustomers = [
     ],
   },
   {
-    name: "Folder2",
+    name: "Documentos Tienda de Ropa",
     size: 1024,
     dateModified: "2022/05/08",
     thumbnail: "/simulaciones/icons/folder.png",
@@ -54,7 +54,7 @@ export const fileSystemCustomers = [
     ],
   },
   {
-    name: "Folder3",
+    name: "Documentos Restaurante",
     size: 1024,
     dateModified: "2023/06/17",
     thumbnail: "/simulaciones/icons/folder.png",
