@@ -30,6 +30,7 @@ export const EditorImage = () => {
           Text={{ text: "" }}
           Rotate={{ angle: 90, componentType: "slider" }}
           language="es"
+          useBackendTranslations={false}
           tabsIds={[
             TABS.ADJUST,
             TABS.ANNOTATE,

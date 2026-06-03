@@ -20,7 +20,7 @@ const RichTextEditor = () => {
         tinymceScriptSrc={process.env.PUBLIC_URL + "/tinymce/tinymce.min.js"}
         onInit={(evt, editor) => (editorRef.current = editor as any)}
         initialValue={content}
-        apiKey="ubaoegai2i60ab94ge8augvzhod6n3wa1ktsj50ixl0wukm9" //Replace for environment variable
+        apiKey={process.env.TINYMCE_API_KEY} 
         init={{
           height: "100vh",
           menubar: "file edit view insert format tools table help",
